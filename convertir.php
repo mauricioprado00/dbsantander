@@ -1,4 +1,4 @@
-#!/usr/local/zend/bin/php
+#!/usr/bin/php
 <?php
 error_reporting(-1);
 ini_set('display_errors', 1);
@@ -23,7 +23,7 @@ foreach ($data as $row) {
 	if (!count($row)) {continue;}
 
 	//08/03/2013 18:35:00
-	$row[0] = preg_replace("(^([0-9]+)\\/([0-9]+)\\/([0-9]+) ([0-9]+):([0-9]+):([0-9]+))", "$3$2$1$4$5$6", $row[0]);
+	$row[0] = preg_replace("(^([0-9]+)\\/([0-9]+)\\/([0-9]+) ([0-9]+):([0-9]+):([0-9]+))", "$3$1$2$4$5$6", $row[0]);
 	echo $res;
 	$res = '("' . implode('","', $row) . '"),' . "\n";
 }
